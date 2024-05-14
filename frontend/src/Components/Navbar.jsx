@@ -15,11 +15,22 @@ const Navbar = () => {
 
 
   return (
-    <div className='flex justify-around p-5 bg-gray-200  font-custom-poppin'> 
-      <div className="nav-logo flex  gap-2 ">
-        <img src={logo} alt='logo' width={50} height={50}/>
-        <p className='text-lg flex font-bold items-center  '>SHOPPER</p>
-      </div>
+    <div className='flex justify-around p-5 bg-gray-200  font-custom-poppin'
+    style={{
+      boxShadow: " rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset",
+    }} 
+    > 
+      
+        <Link to='/'>
+          <div className="nav-logo flex  gap-2 cursor-pointer">
+            <img src={logo} alt='logo' width={50} height={50}/>
+            <p className='text-lg flex font-bold items-center  '>SHOPPER</p>
+          </div>
+        </Link> 
+
+
+        
+      
 
       <ul className="nav-menu flex gap-6 text-sm md:text-lg">
         <li onClick={() => setMenu('Shop')} className={`nav-item flex transition-all items-center cursor-pointer font-medium ${(Menu === 'Shop') ? 'active' : ''}`}>
