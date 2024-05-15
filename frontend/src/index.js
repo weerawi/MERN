@@ -3,15 +3,22 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App'; 
 import { BrowserRouter } from 'react-router-dom';
+import ShopContextProvider from './Context/ShopContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
-  <BrowserRouter>
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-  </BrowserRouter>
+
+  <ShopContextProvider>
+
+    <BrowserRouter>
+ 
+      <App />
+     
+    </BrowserRouter>
+
+  </ShopContextProvider>
+  
   
 );
 
