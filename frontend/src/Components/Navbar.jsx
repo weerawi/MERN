@@ -61,10 +61,10 @@ const Navbar = () => {
         
 
         <Link to='/cart'><img className='p-2 cursor-pointer' src={cart_icon} alt='cart'  width={50} height={50}/> </Link>
-        <div className="nav-cart-count font-semibold text-base flex mt-[-3px] ml-[-8px] 
+        {getTotalCartItems() > 0 && <div className="nav-cart-count font-semibold text-base flex mt-[-3px] ml-[-8px] 
         text-white bg-red-800 rounded-full p-1 h-6 items-center justify-center"> 
         {getTotalCartItems()}
-        </div>
+        </div>}
         
       </div>
     </div>
