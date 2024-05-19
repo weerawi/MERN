@@ -19,6 +19,7 @@ const AddProduct = () => {
     const changeHandler = (e) => {
         setProductDetails({...productDetails,[e.target.name]:e.target.value});//any name that change in the input
     }
+
     const Add_Product = async () => {
         console.log(productDetails);
 
@@ -51,14 +52,23 @@ const AddProduct = () => {
                 },
                 body:JSON.stringify(product),
             }).then(res => res.json()).then((data) => {
-                data.success?alert('Product Added'):alert('Product not added');  
+                if(data.success) {
+                    alert('Product Added');
+                    setProductDetails({
+                        name:'', 
+                        category:'men', 
+                        new_price:'',  
+                        old_price:'',
+                    }); // Reset productDetails
+                    // setImage(''); // Reset image
+                } else {
+                    alert('Product not added');
+                }   
             })
-        }
-
-
+        } 
     }
 
-  return (
+return (
     <div className="h-1/3 flex flex-col gap-7 p-16 bg-gray-200 ml-5 my-5 
     w-auto sm:w-[500px] lg:w-[750px] xl:w-[1280px] font-custom-robot">
         <div className="space-y-2 ">
